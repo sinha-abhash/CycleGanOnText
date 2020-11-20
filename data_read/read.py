@@ -70,7 +70,7 @@ class Dataset:
         news_data = [n for n in news_data if n['headline'] and n['short_description']]
         news_data = news_data[:max_data_samples]
 
-        for irrelevant, relevant in zip(news_data[:128], crisp_questions[:128]):
+        for irrelevant, relevant in zip(news_data, crisp_questions):
             # check for punctuation in headline. If not present, then add full stop
             if irrelevant['headline'][-1] not in string.punctuation:
                 irrelevant['headline'] += '.'
@@ -87,6 +87,9 @@ class Dataset:
                 self.test_sentences.append((dirty_question, relevant))
 
             self.irrelevant_questions_set.append(dirty_question)
+        logging.info(f"irrelevant question: {self.irrelevant_questions_set[0]}")
+        logging.info(f"news data: {news_data[0]}")
+        logging.info(f"squad question: {crisp_questions[0]}")
 
     def prepare_dataset(self):
         news_data = []

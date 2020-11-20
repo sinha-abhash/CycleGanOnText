@@ -25,7 +25,7 @@ The irrelevant dataset or domain A is created by concatenating the headline of t
  - Discriminator uses Conv1D layers along with Dense to distinguish between fake and real.
  
  ## Loss
- Below losses are explained in the Tensorflow (https://www.tensorflow.org/tutorials/generative/cyclegan) implementation
+ Below losses are explained in the [Tensorflow](https://www.tensorflow.org/tutorials/generative/cyclegan) implementation
  - Adversial Loss
  - Cycle Loss
  - Identity Loss
